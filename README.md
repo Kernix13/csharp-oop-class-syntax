@@ -133,54 +133,71 @@ The following keywords and terms were covered in the lessons but I do not know w
 
 ## Code: line-by-line
 
+Examples and descriptiosn for the code I used.
+
 ### Pet.cs
 
+#### NAMESPACE
+
+- I removed this from Program.cs and the app crashed:
+
 ```cs
-/* ✔️ NAMESPACE:
-   I removed this from Program.cs and the app crashed: */
 namespace AnimalShelter;
+```
 
-/* ✔️ CLASS + PARTIAL:
-   I did not see the value of using partial classes
-   I can see how a class filled with many methods could be a problem.
-   Is this similar to import/export syntax in JavaScript ES Modules? */
+#### CLASS + PARTIAL
+
+- I did not see the value of using partial classes. I can see how a class filled with many methods could be a problem.
+- Is this similar to import/export syntax in JavaScript ES Modules?
+
+```cs
 public partial class Pet {}
+```
 
-/* ✔️ FIELD MODIFIERS */
-/* ✔️ PRIVATE + STATIC:
-   - private: Hidden from all other classes; only accessible within this class.
-   - static: Belongs to the class itself; shared by all instances.
-   - private static: Accessible only inside the class; shared by all instances of that class.
-   - s_nextPetId: incremented for each new instance of Pet inside the instance constructor.
- */
+#### FIELD MODIFIERS
+
+- `private`: Hidden from all other classes; only accessible within this class.
+- `static`: Belongs to the class itself; shared by all instances.
+- `private static`: Accessible only inside the class; shared by all instances of that class.
+  - `s_nextPetId`: incremented for each new instance of Pet inside the instance constructor.
+- `public`: Visible to all project code; any class can see and change this.
+- `public static`: Visible to all project code and shared as a single instance by the class.
+
+```cs
+/* PRIVATE + STATIC */
 // 1.
 private static int s_nextPetId = 1;
+
 // 2.
 private string _petName = "Unknown";
 
-/* ✔️ PUBLIC:
-   - public: Visible to all project code; any class can see and change this.
-   - public static: Visible to all project code and shared as a single instance by the class.
-*/
-// 1.
-public static int TotalPets { get; private set; }
-// 2.
-public int PetId { get; }
 // 3.
-public string Species { get; set; }
-// 4.
 private float _age;
 
-/* ✔️ PROPERTIES:
-   - Backing Fields: _petName, _age - marked private, the secret spot where the data is actually stored
-   - The Property: PetName, Age - marked public, the public "gatekeeper" that controls how data is read or changed
-   - private backing field: automatic when you use { get; set; }
-   - 🚫 I forgot to add a note about this: private set;
-*/
+/* PUBLIC + STATIC */
+// 1.
+public static int TotalPets { get; private set; }
+
+// 2.
+public int PetId { get; }
+
+// 3.
+public string Species { get; set; }
+```
+
+#### PROPERTIES
+
+- Backing Fields: `_petName`, `_age` - marked private, the secret spot where the data is actually stored
+- The Property: `PetName`, `Age` - marked public, the public "gatekeeper" that controls how data is read or changed
+- private backing field: automatic when you use `{ get; set; }`
+- 🚫 I forgot to add a note about this: `private set;`
+
+```cs
 // 1. MODERN SYNTAX
 public static int TotalPets { get; private set; }
 public int PetId { get; }
 public string Species { get; set; }
+
 // 2. OLDER/VERBOSE SYNTAX
 private float _age;
 public float Age
@@ -188,6 +205,7 @@ public float Age
    get { return _age; }
    set { _age = value; }
 }
+
 // 3. VALIDATION
 private string _petName = "Unknown";
 public string PetName
@@ -201,30 +219,105 @@ public string PetName
             _petName = value;
    }
 }
-
-/* ✔️ CONSTRUCTOR:
-   - static constructor:
-   - public instance constructor:
-*/
-// 1. static constructor
-
-// 2. public instance constructor
-
-/* ✔️ METHOD
-   - public void:
-   - public dataType (not prsent in this file):
-*/
-// 1.
 ```
+
+#### CONSTRUCTOR
+
+- static constructor: to initialize any static data, or to perform an action that needs to be performed only once
+- public instance constructor: this builds the instance objects
+
+```cs
+// 1. static constructor
+static Pet() {}
+
+// 2. public instance constructor - 1 version with params
+public Pet(string name, string species, float age) {}
+```
+
+#### METHOD
+
+- public void: basic method that does not return a value
+
+```cs
+// 1.
+public void DisplayInfo() {}
+```
+
+<span aria-hidden="true"><br></span>
 
 ### PetMethods.cs
 
+#### NAMESPACE
+
+- This is needed here as well
+
+```cs
+namespace AnimalShelter;
+```
+
+#### CLASS + PARTIAL
+
+- The keyword `partial` is needed in the "parent" class and is the partial files as well - they must match.
+
+```cs
+public partial class Pet
+```
+
+#### FIELD MODIFIERS
+
 ```cs
 
 ```
 
-### Adoption.cs
+#### PROPERTIES
 
 ```cs
 
+```
+
+#### CONSTRUCTOR
+
+```cs
+
+```
+
+#### METHOD
+
+```cs
+
+```
+
+<span aria-hidden="true"><br></span>
+
+### Adoption.cs
+
+#### USING
+
+- This is the only file that needs this code
+- `namespace` is not needed in this file unlike the other files.
+
+```cs
+using AnimalShelter;
+```
+
+#### NEW
+
+-
+
+```cs
+// 1.
+Pet pet1 = new Pet(pet1Name, pet1Species, pet1Age);
+
+// 2.
+Pet pet2 = new Pet(pet2Name, pet2Species, pet2Age);
+```
+
+#### STATIC FIELD
+
+```cs
+// 1.
+Pet.TotalPets
+
+// 2.
+Adoption.AdoptionFee
 ```
