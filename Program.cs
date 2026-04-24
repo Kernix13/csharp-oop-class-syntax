@@ -21,6 +21,6 @@ Console.WriteLine($"New pet: {pet2.PetName}, Pet id: {pet2.PetId}, Species: {pet
 Console.WriteLine($"Total pets in shelter: {Pet.TotalPets}");
 
 Adoption adoption1 = new Adoption("Jim", pet2, 100);
-Console.WriteLine($"Adoption ID: {adoption1.AdoptionId}, Adopter Name: {adoption1.AdopterName}, Adopted Pet: {adoption1.AdoptedPet.PetName}, Adoption Fee: {Adoption.AdoptionFee}");
+Console.WriteLine($"Adoption ID: {adoption1.AdoptionId}, Adopter Name: {adoption1.AdopterName}, Adopted Pet: {adoption1.AdoptedPet.PetName}, Adoption Fee: ${Adoption.AdoptionFee}");
 
 // Adoption Fee: {adoption1.AdoptionFee} - why did that not work? Because AdoptionFee is static, it belongs to the class, not the instance. So you should access it through the class name, not the instance. See Pet.TotalPets above.

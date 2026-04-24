@@ -36,6 +36,17 @@ dotnet run
 > [!NOTE]
 > There are variables used to create 2 pet objects in `Project.cs`. Those objects are what creates the output in the console. I could create `ReadLine` statements and output the results, but you would only see one object in the console.
 
+Console output:
+
+```sh
+$ dotnet run
+Pet class initialized
+New pet: Buddy, Pet id: 1, Species: dog, Pet Age: 1.5
+New pet: Luna, Pet id: 2, Species: cat, Pet Age: 12
+Total pets in shelter: 2
+Adoption ID: 1, Adopter Name: Jim, Adopted Pet: Luna, Adoption Fee: $100
+```
+
 <span aria-hidden="true"><br></span>
 
 ## Class syntax used
