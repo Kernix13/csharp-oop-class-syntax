@@ -243,9 +243,7 @@ public Pet(string name, string species, float age) {}
 public void DisplayInfo() {}
 ```
 
-<span aria-hidden="true"><br></span>
-
-### PetMethods.cs
+### <ins>PetMethods.cs</ins>
 
 #### NAMESPACE
 
@@ -257,7 +255,7 @@ namespace AnimalShelter;
 
 #### CLASS + PARTIAL
 
-- The keyword `partial` is needed in the "parent" class and is the partial files as well - they must match.
+- The keyword `partial` is needed in the "parent" class and is the partial files as well - they must match!
 
 ```cs
 public partial class Pet
