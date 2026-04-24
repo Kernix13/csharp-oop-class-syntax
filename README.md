@@ -1,6 +1,6 @@
 # Introduction to Object-Oriented Programming (OOP)
 
-This project uses various Object-Oriented Programming concepts and syntax sucs as classes, fields, properties, and constructors.
+This project uses various Object-Oriented Programming concepts and syntax such as classes, fields, properties, and constructors.
 
 <span aria-hidden="true"><br></span>
 
