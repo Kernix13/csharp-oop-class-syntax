@@ -136,18 +136,18 @@ The following keywords and terms were covered in the lessons but I do not know w
 ### Pet.cs
 
 ```cs
-/* NAMESPACE:
+/* ✔️ NAMESPACE:
    I removed this from Program.cs and the app crashed: */
 namespace AnimalShelter;
 
-/* CLASS + PARTIAL:
+/* ✔️ CLASS + PARTIAL:
    I did not see the value of using partial classes
    I can see how a class filled with many methods could be a problem.
    Is this similar to import/export syntax in JavaScript ES Modules? */
 public partial class Pet {}
 
-/* FIELD MODIFIERS */
-/* PRIVATE + STATIC:
+/* ✔️ FIELD MODIFIERS */
+/* ✔️ PRIVATE + STATIC:
    - private: Hidden from all other classes; only accessible within this class.
    - static: Belongs to the class itself; shared by all instances.
    - private static: Accessible only inside the class; shared by all instances of that class.
@@ -158,7 +158,7 @@ private static int s_nextPetId = 1;
 // 2.
 private string _petName = "Unknown";
 
-/* PUBLIC:
+/* ✔️ PUBLIC:
    - public: Visible to all project code; any class can see and change this.
    - public static: Visible to all project code and shared as a single instance by the class.
 */
@@ -171,10 +171,11 @@ public string Species { get; set; }
 // 4.
 private float _age;
 
-/* PROPERTIES:
+/* ✔️ PROPERTIES:
    - Backing Fields: _petName, _age - marked private, the secret spot where the data is actually stored
    - The Property: PetName, Age - marked public, the public "gatekeeper" that controls how data is read or changed
    - private backing field: automatic when you use { get; set; }
+   - 🚫 I forgot to add a note about this: private set;
 */
 // 1. MODERN SYNTAX
 public static int TotalPets { get; private set; }
@@ -201,7 +202,7 @@ public string PetName
    }
 }
 
-/* CONSTRUCTOR:
+/* ✔️ CONSTRUCTOR:
    - static constructor:
    - public instance constructor:
 */
@@ -209,7 +210,7 @@ public string PetName
 
 // 2. public instance constructor
 
-/* METHOD
+/* ✔️ METHOD
    - public void:
    - public dataType (not prsent in this file):
 */
