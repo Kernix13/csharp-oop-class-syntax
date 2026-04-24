@@ -6,10 +6,11 @@ public partial class Pet
     public static int TotalPets { get; private set; }
 
     // This can only be set inside the class, not from outside so no 'set;'
-    // you do not want pet1.PetId = 999;
+    // You do not want pet1.PetId = 999;
     public int PetId { get; }
 
-    // Species and Age should be similar to _petName, but I'll ski that
+    // Species and Age should be similar to _petName for validation
+    // I'll skip that because I want to know the various syntax options for properties.
     private string _petName = "Unknown";
 
     // shorthand / modern syntax
@@ -28,6 +29,7 @@ public partial class Pet
         }
     }
 
+    // Verbose syntax.
     public float Age
     {
         get { return _age; }

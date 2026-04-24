@@ -115,8 +115,115 @@ The following keywords and terms were covered in the lessons but I do not know w
 1. The `this` keyword is not available in a static constructor
 1. Properties combine aspects of both fields and methods
 1. Unlike fields, properties aren't classified as variables. Therefore, you can't pass a property as a `ref` or `out` parameter
-1. What exactly are _backing fields_?
 1. The keyword `value` KW represents the value being assigned to the property
 1. Classes declared directly within a namespace can have `public`, `internal` or `file` access. Classes are assigned `internal` access by default when no access modifier is specified.
 1. Creating a static class is therefore basically the same as creating a class that contains only static members and a private constructor
+
+<span aria-hidden="true"><br></span>
+
+## Questions
+
+1. Why exactly do I need to use `namespace`?
+   1. So that I can use the classes in all files?
+   1. Is it similar to `import`/`export` syntax in ES Modules or it that what `partial` does?
+1. What exactly are _backing fields_?
 1. What is garbage collection and is it important to know?
+
+<span aria-hidden="true"><br></span>
+
+## Code: line-by-line
+
+### Pet.cs
+
+```cs
+/* NAMESPACE:
+   I removed this from Program.cs and the app crashed: */
+namespace AnimalShelter;
+
+/* CLASS + PARTIAL:
+   I did not see the value of using partial classes
+   I can see how a class filled with many methods could be a problem.
+   Is this similar to import/export syntax in JavaScript ES Modules? */
+public partial class Pet {}
+
+/* FIELD MODIFIERS */
+/* PRIVATE + STATIC:
+   - private: Hidden from all other classes; only accessible within this class.
+   - static: Belongs to the class itself; shared by all instances.
+   - private static: Accessible only inside the class; shared by all instances of that class.
+   - s_nextPetId: incremented for each new instance of Pet inside the instance constructor.
+ */
+// 1.
+private static int s_nextPetId = 1;
+// 2.
+private string _petName = "Unknown";
+
+/* PUBLIC:
+   - public: Visible to all project code; any class can see and change this.
+   - public static: Visible to all project code and shared as a single instance by the class.
+*/
+// 1.
+public static int TotalPets { get; private set; }
+// 2.
+public int PetId { get; }
+// 3.
+public string Species { get; set; }
+// 4.
+private float _age;
+
+/* PROPERTIES:
+   - Backing Fields: _petName, _age - marked private, the secret spot where the data is actually stored
+   - The Property: PetName, Age - marked public, the public "gatekeeper" that controls how data is read or changed
+   - private backing field: automatic when you use { get; set; }
+*/
+// 1. MODERN SYNTAX
+public static int TotalPets { get; private set; }
+public int PetId { get; }
+public string Species { get; set; }
+// 2. OLDER/VERBOSE SYNTAX
+private float _age;
+public float Age
+{
+   get { return _age; }
+   set { _age = value; }
+}
+// 3. VALIDATION
+private string _petName = "Unknown";
+public string PetName
+{
+   get { return _petName; }
+   set
+   {
+      if (string.IsNullOrWhiteSpace(value))
+            _petName = "Unknown";
+      else
+            _petName = value;
+   }
+}
+
+/* CONSTRUCTOR:
+   - static constructor:
+   - public instance constructor:
+*/
+// 1. static constructor
+
+// 2. public instance constructor
+
+/* METHOD
+   - public void:
+   - public dataType (not prsent in this file):
+*/
+// 1.
+```
+
+### PetMethods.cs
+
+```cs
+
+```
+
+### Adoption.cs
+
+```cs
+
+```
