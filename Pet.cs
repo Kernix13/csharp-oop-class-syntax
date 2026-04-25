@@ -16,6 +16,7 @@ public partial class Pet
     // shorthand / modern syntax
     public string Species { get; set; }
     private float _age;
+    private string? _breed;
 
     public string PetName
     {
@@ -29,11 +30,17 @@ public partial class Pet
         }
     }
 
-    // Verbose syntax.
+    // Verbose syntax:
     public float Age
     {
         get { return _age; }
         set { _age = value; }
+    }
+    // Verbose syntax (expression body definition):
+    public string Breed
+    {
+        get => _breed;
+        set => _breed = value;
     }
 
     static Pet()
@@ -41,17 +48,18 @@ public partial class Pet
         Console.WriteLine("Pet class initialized");
     }
 
-    public Pet(string name, float age, string species = "dog")
+    public Pet(string name, float age, string species = "dog", string breed = "unknown")
     {
         PetId = s_nextPetId++;
         PetName = name;
         Species = species;
+        Breed = breed;
         Age = age;
         TotalPets++;
     }
 
-    public void DisplayInfo()
+    public string DisplayInfo()
     {
-        Console.WriteLine($"Pet ID: {PetId}, Name: {PetName}, Species: {Species}, Age: {Age}");
+        return $"\nPet ID: {PetId}, Name: {PetName}, Age: {Age}, Species: {Species}, Breed: {Breed}";
     }
 }

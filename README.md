@@ -65,12 +65,13 @@ I used the following syntax/keywords in this project:
 1. public property with modern syntax: `{ get; set; }`
 1. public property with the longer/verbose syntax
 1. public property with validation
+1. Use of `=>` in property (definition? accessor? expression body definition? something else?)
 1. 1 Static constructor
 1. 1 Public instance constructor with parameters
 1. 1 optional parameter in instance constructor
 1. 2 named arguments used in Program.js
-1. 1 public method with the `return` keyword
-1. 2 public void methods
+1. 2 public methods with the `return` keyword
+1. 1 public void methods
 1. Partial class (weak implementation)
 1. `new` keyword to create objects from the classes
 
@@ -82,7 +83,6 @@ I did not, or decided not to, use the following due to the fact I did not unders
 
 ### On to-do list to learn or add to projects
 
-1. `=>`
 1. `readonly`
 1. The `this` keyword because I am not sure when/where to use it (_Add later_)
 1. The `init` accessor

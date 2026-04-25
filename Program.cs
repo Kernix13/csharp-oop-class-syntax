@@ -3,29 +3,33 @@
 string pet1Name = "Buddy";
 string pet1Species = "dog";
 float pet1Age = 1.5f;
-Pet pet1 = new Pet(pet1Name, pet1Age, pet1Species);
+string pet1Breed = "AmStaff";
+Pet pet1 = new Pet(pet1Name, pet1Age, pet1Species, pet1Breed);
 
 string pet2Name = "Luna";
 string pet2Species = "cat";
 float pet2Age = 2f;
-Pet pet2 = new Pet(pet2Name, pet2Age, pet2Species);
+string pet2Breed = "DSH";
+Pet pet2 = new Pet(pet2Name, pet2Age, pet2Species, pet2Breed);
 
 // Update Luna's age
 pet2.UpdateAge(12f);
 
-Console.WriteLine($"New pet: {pet1.PetName}, Pet id: {pet1.PetId}, Species: {pet1.Species}, Pet Age: {pet1.Age}");
+Console.WriteLine($"New pet: {pet1.PetName}, Pet id: {pet1.PetId}, Species: {pet1.Species}, Breed: {pet1.Breed}, Pet Age: {pet1.Age}");
 
-Console.WriteLine($"New pet: {pet2.PetName}, Pet id: {pet2.PetId}, Species: {pet2.Species}, Pet Age: {pet2.Age}");
+Console.WriteLine($"New pet: {pet2.PetName}, Pet id: {pet2.PetId}, Species: {pet2.Species}, Breed: {pet2.Breed}, Pet Age: {pet2.Age}");
 
-// Use named arguments and an optional argument
+// Use named arguments and an optional arguments
 Pet pet3 = new Pet(name: "Logan", age: 3f);
 
-Console.WriteLine($"New pet: {pet3.PetName}, Pet id: {pet3.PetId}, Species: {pet3.Species}, Pet Age: {pet3.Age}");
+Console.WriteLine($"New pet: {pet3.PetName}, Pet id: {pet3.PetId}, Species: {pet3.Species}, Breed: {pet3.Breed}, Pet Age: {pet3.Age}");
 
 // Static field - call on class, not instance/object
 Console.WriteLine($"Total pets in shelter: {Pet.TotalPets}");
 
 Adoption adoption1 = new Adoption("Jim", pet2, 100);
 Console.WriteLine($"Adoption ID: {adoption1.AdoptionId}, Adopter Name: {adoption1.AdopterName}, Adopted Pet: {adoption1.AdoptedPet.PetName}, Adoption Fee: ${Adoption.AdoptionFee}");
+
+Console.WriteLine(pet3.DisplayInfo());
 
 // Adoption Fee: {adoption1.AdoptionFee} - why did that not work? Because AdoptionFee is static, it belongs to the class, not the instance. So you should access it through the class name, not the instance. See Pet.TotalPets above.
