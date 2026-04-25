@@ -139,7 +139,8 @@ Examples and descriptiosn for the code I used.
 
 #### NAMESPACE
 
-- I removed this from Program.cs and the app crashed:
+- I removed this from Program.cs and the app crashed
+- This line says, "This class lives inside `AnimalShelter`"
 
 ```cs
 namespace AnimalShelter;
@@ -189,8 +190,10 @@ public string Species { get; set; }
 
 - Backing Fields: `_petName`, `_age` - marked private, the secret spot where the data is actually stored
 - The Property: `PetName`, `Age` - marked public, the public "gatekeeper" that controls how data is read or changed
-- private backing field: automatic when you use `{ get; set; }`
-- 🚫 I forgot to add a note about this: `private set;`
+- Private backing field: automatic when you use `{ get; set; }`
+- `{ get; private set; }`: Anyone can read the value, but only this class can change it.
+- `{ get; }`: Read-only - the value is set when the object is born and can never change.
+- `{ get; set; }`: Full access; any part of the project can read or change this at any time.
 
 ```cs
 // 1. MODERN SYNTAX
@@ -243,7 +246,9 @@ public Pet(string name, string species, float age) {}
 public void DisplayInfo() {}
 ```
 
-### <ins>PetMethods.cs</ins>
+<span aria-hidden="true"><br></span>
+
+### PetMethods.cs
 
 #### NAMESPACE
 
@@ -256,43 +261,76 @@ namespace AnimalShelter;
 #### CLASS + PARTIAL
 
 - The keyword `partial` is needed in the "parent" class and is the partial files as well - they must match!
+- I forgot to add the fields and properties here and did not notice that it worked anyway.
+  - I assume the `partial` keyword brings the code into `Pet.cs` so that is not necessary.
 
 ```cs
-public partial class Pet
-```
-
-#### FIELD MODIFIERS
-
-```cs
-
-```
-
-#### PROPERTIES
-
-```cs
-
-```
-
-#### CONSTRUCTOR
-
-```cs
-
+public partial class Pet {}
 ```
 
 #### METHOD
 
-```cs
+- Nothing special here - 1 method that returns a value and 1 void method
 
+```cs
+// 1.
+public string GetPetDescription() {}
+
+// 2.
+public void UpdateAge(float newAge) {}
 ```
 
 <span aria-hidden="true"><br></span>
 
 ### Adoption.cs
 
+#### NAMESPACE
+
+- This is needed here as well
+
+```cs
+namespace AnimalShelter;
+```
+
+#### FIELD MODIFIERS
+
+- `private static`, `public`, and `public static` similar to above
+- Custom Type Property: This property links the Adoption class to the Pet class
+
+```cs
+/* PRIVATE + STATIC */
+// 1.
+private static int s_nextAdoptionId = 1;
+
+/* PUBLIC + STATIC */
+// 1. read-only
+public int AdoptionId { get; }
+// 2.
+public string AdopterName { get; set; }
+// 3. Auto-Property Initializer
+public static int AdoptionFee { get; set; } = 50;
+
+// 4. Custom Type Property
+public Pet AdoptedPet { get; set; }
+```
+
+#### CONSTRUCTOR
+
+- A single instance constructor
+
+```cs
+public Adoption(string adopterName, Pet adoptedPet, int adoptionFee) {}
+```
+
+<span aria-hidden="true"><br></span>
+
+### Program.cs
+
 #### USING
 
 - This is the only file that needs this code
 - `namespace` is not needed in this file unlike the other files.
+- `Program.js` has to use a "Visitor's Pass" (the `using` statement) to reach inside and talk to the classes living there
 
 ```cs
 using AnimalShelter;
@@ -300,7 +338,7 @@ using AnimalShelter;
 
 #### NEW
 
--
+- Just like in JavaScript, the `new` keyword is needed to create class instances (objects)
 
 ```cs
 // 1.
@@ -311,6 +349,8 @@ Pet pet2 = new Pet(pet2Name, pet2Species, pet2Age);
 ```
 
 #### STATIC FIELD
+
+- Static Member Access: Accessed using the Class Name (`Pet` and `Adoption`) instead of an object name, because the data belongs to the blueprint itself
 
 ```cs
 // 1.
