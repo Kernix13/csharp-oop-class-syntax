@@ -51,15 +51,15 @@ Adoption ID: 1, Adopter Name: Jim, Adopted Pet: Luna, Adoption Fee: $100
 
 ## Class syntax used
 
-I use the following syntax/keywords in this project:
+I used the following syntax/keywords in this project:
 
 1. namespace
 1. using
-1. public class
-1. public field
-1. public static field
-1. private field
-1. private static field
+1. `public class`
+1. `public` field
+1. `public static` field
+1. `private` field
+1. `private static` field
 1. public properties with `get`, `set` accessors
 1. public property with `private set;`
 1. public property with modern syntax: `{ get; set; }`
@@ -68,7 +68,7 @@ I use the following syntax/keywords in this project:
 1. 1 Static constructor
 1. 1 Public instance constructor with parameters
 1. 1 optional parameter in instance constructor
-1. 2 named arguments used Program.js
+1. 2 named arguments used in Program.js
 1. 1 public method with the `return` keyword
 1. 2 public void methods
 1. Partial class (weak implementation)
@@ -78,27 +78,32 @@ I use the following syntax/keywords in this project:
 
 ## Class syntax _NOT_ used
 
-I did not, or decided not to, use the following due to the fact I did not understand them or did not see a way to work them in:
+I did not, or decided not to, use the following due to the fact I did not understand them or did not see a way to work them in.
+
+### On to-do list to learn or add to projects
 
 1. `=>`
-1. The `?` in expressions like `public string?`
 1. `readonly`
+1. The `this` keyword because I am not sure when/where to use it (_Add later_)
+1. The `init` accessor
+1. Expression methods: `this ClassName paramName`
+1. The `ref` or `out` keywords
+1. Copy constructors
+
+### Skip learning for now
+
 1. `protected`
 1. `required`
 1. `internal`
 1. `abstract`
-1. The `this` keyword because I am not sure when/where to use it (_Add later_)
-1. `public void` for a method
-1. The `init` accessor
 1. The `field` keyword
-1. Expression methods: `this ClassName paramName`
-1. The `ref` or `out` keywords
 1. Static classes
+1. Class finalizers
 1. Nested classes
 1. Partial members
 1. Object initializers
-1. Copy constructors
-1. Class finalizers
+
+### Other points
 
 I did not use arrays or `Console.ReadLine` or other C# syntax learned previously because there was so much to learn for this project. Later I could add an array of pet types (dog, cat, rabbit, etc) and use a `ReadLine` to grab the value and add it to `Species` in `Pet.cs`.
 
