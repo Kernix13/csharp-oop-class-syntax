@@ -100,7 +100,7 @@ I did not, or decided not to, use the following due to the fact I did not unders
 1. Copy constructors
 1. Class finalizers
 
-I did not use arrays or `Console.ReadLine` or other C# syntax learned previously because there was so much to learn for this project. LAter I could add an array of pet types (dog, cat, rabbit, etc) and use a ReadLine to grab the value and add it to `Species` in `Pet.cs`.
+I did not use arrays or `Console.ReadLine` or other C# syntax learned previously because there was so much to learn for this project. Later I could add an array of pet types (dog, cat, rabbit, etc) and use a ReadLine to grab the value and add it to `Species` in `Pet.cs`.
 
 The following keywords and terms were covered in the lessons but I do not know what they are, how to use them, or when to use them:
 
@@ -115,9 +115,9 @@ The following keywords and terms were covered in the lessons but I do not know w
 1. The `this` keyword is not available in a static constructor
 1. Properties combine aspects of both fields and methods
 1. Unlike fields, properties aren't classified as variables. Therefore, you can't pass a property as a `ref` or `out` parameter
-1. The keyword `value` KW represents the value being assigned to the property
+1. The keyword `value` represents the value being assigned to the property (what is passed to the class constructor during instantiation I think)
 1. Classes declared directly within a namespace can have `public`, `internal` or `file` access. Classes are assigned `internal` access by default when no access modifier is specified.
-1. Creating a static class is therefore basically the same as creating a class that contains only static members and a private constructor
+1. Creating a static class is basically the same as creating a class that contains only static members and a private constructor
 
 <span aria-hidden="true"><br></span>
 
