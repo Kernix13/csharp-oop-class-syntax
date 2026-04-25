@@ -38,13 +38,16 @@ dotnet run
 
 Console output:
 
-```sh
+```
 $ dotnet run
 Pet class initialized
-New pet: Buddy, Pet id: 1, Species: dog, Pet Age: 1.5
-New pet: Luna, Pet id: 2, Species: cat, Pet Age: 12
-Total pets in shelter: 2
+New pet: Buddy, Pet id: 1, Species: dog, Breed: AmStaff, Pet Age: 1.5
+New pet: Luna, Pet id: 2, Species: cat, Breed: DSH, Pet Age: 12
+New pet: Logan, Pet id: 3, Species: dog, Breed: unknown, Pet Age: 3
+Total pets in shelter: 3
 Adoption ID: 1, Adopter Name: Jim, Adopted Pet: Luna, Adoption Fee: $100
+
+Pet ID: 3, Name: Logan, Age: 3, Species: dog, Breed: unknown
 ```
 
 <span aria-hidden="true"><br></span>
@@ -68,10 +71,10 @@ I used the following syntax/keywords in this project:
 1. Use of `=>` in property accessor
 1. 1 Static constructor
 1. 1 Public instance constructor with parameters
-1. 1 optional parameter in instance constructor
+1. 2 optional parameters in instance constructor
 1. 2 named arguments used in Program.js
 1. 2 public methods with the `return` keyword
-1. 1 public void methods
+1. 1 public void method
 1. Partial class (weak implementation)
 1. `new` keyword to create objects from the classes
 
@@ -125,8 +128,6 @@ The following keywords and terms were covered in the lessons but I do not know w
 1. Properties combine aspects of both fields and methods
 1. Unlike fields, properties aren't classified as variables. Therefore, you can't pass a property as a `ref` or `out` parameter
 1. The keyword `value` represents the value being assigned to the property (what is passed to the class constructor during instantiation I think)
-1. Classes declared directly within a namespace can have `public`, `internal` or `file` access. Classes are assigned `internal` access by default when no access modifier is specified.
-1. Creating a static class is basically the same as creating a class that contains only static members and a private constructor
 
 <span aria-hidden="true"><br></span>
 
@@ -135,7 +136,7 @@ The following keywords and terms were covered in the lessons but I do not know w
 1. Why exactly do I need to use `namespace`?
    1. So that I can use the classes in all files?
    1. Is it similar to `import`/`export` syntax in ES Modules or it that what `partial` does?
-1. What exactly are _backing fields_?
+1. Can I use `using AnimalShelter;` instead of `namespace AnimalShelter;`? Try it and see
 1. What is garbage collection and is it important to know?
 1. What is the difference between field vs. property?
    1. If you add some form of `{ get; set; }` to a _field_, does that turns it into a property? If so, why/when use fields?

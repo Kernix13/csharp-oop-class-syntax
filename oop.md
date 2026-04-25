@@ -82,12 +82,11 @@ public Car(string model) => modelName = model;
 ### Create classes and objects in C#
 
 - Static fields are initialized before an instance of the class is created
-- static fields are accessed using the class name
 - **static fields are accessed using the class name, not an instance**
 - Readonly fields can be assigned a value only when they’re declared or in a constructor
 - A static constructor is called only once
 - Static constructors are used to initialize static fields
-- The `this` is used to access fields, properties, and methods of the current instance
+- The `this` keyword is used to access fields, properties, and methods of the current instance
 - **The `this` keyword is not available in a static constructor.**
 
 **Optional parameters must appear after all required parameters**
@@ -163,6 +162,11 @@ public string FirstName { get; set; } = "FirstName";
 - you can restrict the accessibility of either the get or set accessor
 - Typically, you restrict the accessibility of the set accessor, while keeping the get accessor publicly accessible
 
+```cs
+// restrict the accessibility of the set accessor
+public static int TotalPets { get; private set; }
+```
+
 ### Implement class methods and parameters
 
 - Methods are declared in a class, record, or struct by specifying:
@@ -172,7 +176,7 @@ public string FirstName { get; set; } = "FirstName";
   - The method name
   - Any method parameters
 - Methods can be either _instance_ or _static_
-- To pass a parameter by reference, you use the `ref` or `out` keyword
+- To pass a parameter by reference, you use the `ref` or `out` keyword (?)
 - By using the `params` keyword to indicate that a parameter is a parameter collection, you allow your method to be called with a variable number of arguments
 - Sometimes, you want your method to return more than a single value
 - You use tuple types and tuple literals to return multiple values
@@ -190,6 +194,8 @@ public virtual int Drive(int miles, int speed) { return 1; }
 public virtual int Drive(TimeSpan time, int speed) { return 0; }
 // Derived classes must implement this.
 public abstract double GetTopSpeed();
+
+// 📌 I NEED AN EXAMPLE "tuple types and tuple literals" IN A RETURN
 ```
 
 ### Implement extension methods for a class
@@ -242,7 +248,8 @@ public static class BankCustomerExtensions
 
 ### Implement classes using partial classes
 
-- _Declaring a class over separate files enables multiple programmers to work on it at the same time_.
+<!-- - _Declaring a class over separate files enables multiple programmers to work on it at the same time_. -->
+
 - To split a class definition, use the `partial` keyword modifier
 - All the parts must have the same accessibility, such as public, private, and so on
 - If any part is declared abstract, then the whole type is considered abstract.
