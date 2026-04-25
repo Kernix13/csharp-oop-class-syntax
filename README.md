@@ -56,10 +56,10 @@ I use the following syntax/keywords in this project:
 1. namespace
 1. using
 1. public class
-1. private static field
-1. public static field
 1. public field
+1. public static field
 1. private field
+1. private static field
 1. public properties with `get`, `set` accessors
 1. public property with `private set;`
 1. public property with modern syntax: `{ get; set; }`
@@ -67,10 +67,12 @@ I use the following syntax/keywords in this project:
 1. public property with validation
 1. 1 Static constructor
 1. 1 Public instance constructor with parameters
+1. 1 optional parameter in instance constructor
+1. 2 named arguments used Program.js
 1. 1 public method with the `return` keyword
 1. 2 public void methods
 1. Partial class (weak implementation)
-1. new keyword to create objects from the classes
+1. `new` keyword to create objects from the classes
 
 <span aria-hidden="true"><br></span>
 
@@ -94,13 +96,11 @@ I did not, or decided not to, use the following due to the fact I did not unders
 1. Static classes
 1. Nested classes
 1. Partial members
-1. Named arguments (_Add later_)
-1. Optional arguments (_Add later_)
 1. Object initializers
 1. Copy constructors
 1. Class finalizers
 
-I did not use arrays or `Console.ReadLine` or other C# syntax learned previously because there was so much to learn for this project. Later I could add an array of pet types (dog, cat, rabbit, etc) and use a ReadLine to grab the value and add it to `Species` in `Pet.cs`.
+I did not use arrays or `Console.ReadLine` or other C# syntax learned previously because there was so much to learn for this project. Later I could add an array of pet types (dog, cat, rabbit, etc) and use a `ReadLine` to grab the value and add it to `Species` in `Pet.cs`.
 
 The following keywords and terms were covered in the lessons but I do not know what they are, how to use them, or when to use them:
 
@@ -111,6 +111,7 @@ The following keywords and terms were covered in the lessons but I do not know w
 ## Important notes
 
 1. Static fields are accessed using the class name, not the instance name
+   - For example: `Adoption.AdoptionFee` ✔️ vs `pet1.AdoptionFee` ❌
 1. `this` is used to access fields, properties, and methods of the current instance
 1. The `this` keyword is not available in a static constructor
 1. Properties combine aspects of both fields and methods
@@ -128,6 +129,8 @@ The following keywords and terms were covered in the lessons but I do not know w
    1. Is it similar to `import`/`export` syntax in ES Modules or it that what `partial` does?
 1. What exactly are _backing fields_?
 1. What is garbage collection and is it important to know?
+1. What is the difference between field vs. property?
+   1. If you add some form of `{ get; set; }` to a _field_, does that turns it into a property? If so, why/when use fields?
 
 <span aria-hidden="true"><br></span>
 

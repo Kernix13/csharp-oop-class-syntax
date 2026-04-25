@@ -41,7 +41,7 @@ public partial class Pet
         Console.WriteLine("Pet class initialized");
     }
 
-    public Pet(string name, string species, float age)
+    public Pet(string name, float age, string species = "dog")
     {
         PetId = s_nextPetId++;
         PetName = name;
