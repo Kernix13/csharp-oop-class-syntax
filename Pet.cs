@@ -15,8 +15,9 @@ public partial class Pet
 
     // shorthand / modern syntax
     public string Species { get; set; }
+    // Why do I need private here:
     private float _age;
-    private string? _breed;
+    public string? _breed;
 
     public string PetName
     {

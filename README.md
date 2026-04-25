@@ -65,7 +65,7 @@ I used the following syntax/keywords in this project:
 1. public property with modern syntax: `{ get; set; }`
 1. public property with the longer/verbose syntax
 1. public property with validation
-1. Use of `=>` in property (definition? accessor? expression body definition? something else?)
+1. Use of `=>` in property accessor
 1. 1 Static constructor
 1. 1 Public instance constructor with parameters
 1. 1 optional parameter in instance constructor
@@ -84,11 +84,11 @@ I did not, or decided not to, use the following due to the fact I did not unders
 ### On to-do list to learn or add to projects
 
 1. `readonly`
+1. `params`
 1. The `this` keyword because I am not sure when/where to use it (_Add later_)
 1. The `init` accessor
-1. Expression methods: `this ClassName paramName`
+1. Extension methods: `this ClassName paramName`
 1. The `ref` or `out` keywords
-1. Copy constructors
 
 ### Skip learning for now
 
@@ -96,12 +96,13 @@ I did not, or decided not to, use the following due to the fact I did not unders
 1. `required`
 1. `internal`
 1. `abstract`
-1. The `field` keyword
+1. The `field` keyword: You must set your `<LangVersion>` element to preview in your project file in order to use the `field` contextual keyword. What is `@field`?
 1. Static classes
-1. Class finalizers
 1. Nested classes
 1. Partial members
 1. Object initializers
+1. Copy constructors
+1. Class finalizers
 
 ### Other points
 
@@ -110,6 +111,8 @@ I did not use arrays or `Console.ReadLine` or other C# syntax learned previously
 The following keywords and terms were covered in the lessons but I do not know what they are, how to use them, or when to use them:
 
 - `struct`, `interface`, `enum`, `record`, `delegate`
+
+> See [oop.md](./oop.md) for notes on all of the above.
 
 <span aria-hidden="true"><br></span>
 
