@@ -84,21 +84,21 @@ I used the following syntax/keywords in this project:
 
 I did not, or decided not to, use the following due to the fact I did not understand them or did not see a way to work them in.
 
-### On to-do list to learn or add to projects
+### My to-do list to learn or add to projects
 
-1. `readonly`
-1. `params`
-1. The `this` keyword because I am not sure when/where to use it (_Add later_)
-1. The `init` accessor
+1. `readonly` access level: how does this differ from `private set;`?
+1. `params` method keyword
+1. The `this` keyword in methods to access fields, properties, and methods of the current instance (_Add later_)
 1. Extension methods: `this ClassName paramName`
-1. The `ref` or `out` keywords
 
 ### Skip learning for now
 
-1. `protected`
-1. `required`
-1. `internal`
-1. `abstract`
+1. The `init` accessor
+1. `protected` access level
+1. `required` access level
+1. `internal` access level
+1. `abstract` method modifier
+1. The `ref` or `out` keywords
 1. The `field` keyword: You must set your `<LangVersion>` element to preview in your project file in order to use the `field` contextual keyword. What is `@field`?
 1. Static classes
 1. Nested classes
@@ -123,10 +123,8 @@ The following keywords and terms were covered in the lessons but I do not know w
 
 1. Static fields are accessed using the class name, not the instance name
    - For example: `Adoption.AdoptionFee` ✔️ vs `pet1.AdoptionFee` ❌
-1. `this` is used to access fields, properties, and methods of the current instance
 1. The `this` keyword is not available in a static constructor
 1. Properties combine aspects of both fields and methods
-1. Unlike fields, properties aren't classified as variables. Therefore, you can't pass a property as a `ref` or `out` parameter
 1. The keyword `value` represents the value being assigned to the property (what is passed to the class constructor during instantiation I think)
 
 <span aria-hidden="true"><br></span>
@@ -136,16 +134,16 @@ The following keywords and terms were covered in the lessons but I do not know w
 1. Why exactly do I need to use `namespace`?
    1. So that I can use the classes in all files?
    1. Is it similar to `import`/`export` syntax in ES Modules or it that what `partial` does?
-1. Can I use `using AnimalShelter;` instead of `namespace AnimalShelter;`? Try it and see
-1. What is garbage collection and is it important to know?
+1. Can I use `using AnimalShelter;` instead of `namespace AnimalShelter;`? (Try it and see)
+1. What is garbage collection and is it important to know or is it an automatic thing to just be aware of?
 1. What is the difference between field vs. property?
-   1. If you add some form of `{ get; set; }` to a _field_, does that turns it into a property? If so, why/when use fields?
+   1. If you add some form of `{ get; set; }` to a _field_, does that turns it into a property? If so, why/when use fields without that?
 
 <span aria-hidden="true"><br></span>
 
 ## Code: line-by-line
 
-Examples and descriptiosn for the code I used.
+Examples and descriptions for the code I used.
 
 ### Pet.cs
 

@@ -1,6 +1,8 @@
 # Most important OOP notes
 
-> method overloading is a feature that allows a class to have multiple methods with the same name but different parameter lists
+> _Method overloading_ is a feature that allows a class to have multiple methods with the same name but different parameter lists
+
+<span aria-hidden="true"><br></span>
 
 ## 1. Get started with classes and objects
 
@@ -32,7 +34,7 @@ int[] numbers2 = new int[] { 1, 2, 3, 4, 5 };
 ### Design and use classes
 
 - Physical attributes are often referred to as `properties`, while behavioral attributes are often referred to as functions (`methods`)
-- Classes use **_properties_** to enable access to data and methods to enable behaviors
+- Classes use **_properties_** to enable access to data (fields) and methods to enable behaviors
 - Class properties are used to manage the data that differentiates one object (class instance) from another object
 - Class properties enable objects to
   - read,
@@ -40,9 +42,9 @@ int[] numbers2 = new int[] { 1, 2, 3, 4, 5 };
   - or compute the value of variables (data fields)
 - **Properties appear as public data members, but they're implemented as special methods called _accessors_**
 - **Using namespaces**: devs declare their own namespaces to help control the scope of class and method names
-- implicit `global using` directives are added to new C# projects
-  - you can use types defined in these namespaces without having to specify their fully qualified name or manually add a `using` directive
-  - the global using directives are added to a generated file in the project's `obj` directory
+- Implicit `global using` directives are added to new C# projects
+  - You can use types defined in these namespaces without having to specify their fully qualified name or manually add a `using` directive (Huh?)
+  - The global using directives are added to a generated file in the project's `obj` directory
 - Declaring your own namespaces can help you control the scope of class and method names
 - The `using` directive eliminates the requirement to specify the name of the namespace for every class (?)
 - The global namespace is the "root" namespace: `global::System` always refers to the .NET System namespace.
@@ -54,8 +56,17 @@ using AnimalShelter;
 
 ### Create class constructors and instantiate objects
 
+- Static fields are initialized before an instance of the class is created
+- **Static fields are accessed using the class name, not an instance**
+- Readonly fields can be assigned a value only when they’re declared or in a constructor
+- The `this` keyword is used to access fields, properties, and methods of the current instance
+- **The `this` keyword is not available in a static constructor.**
+
+**Optional parameters must appear after all required parameters**
+
 Static constructor:
 
+- A static constructor is called only once
 - Static constructors are used to initialize any static data, or to perform a particular action that needs to be performed only once
 - Static constructors are called automatically before the first instance is created or any static members are referenced
 - A static constructor doesn't take access modifiers or have parameters.
@@ -70,7 +81,7 @@ Instance constructor:
 - An instance constructor doesn't include a return type.
 - When a class has more than one constructor, the constructors usually take different arguments
 - classes without constructors are given a public parameterless constructor by the C# compiler in order to enable class instantiation
-- Constructors that take parameters must be called using the new operator
+- **Constructors that take parameters must be called using the new operator**
 - If a field or property has no initializer, its value is set to the default value of the field's or property's type.
 - The params passed to a constructor are local to the constructor & are often used to initialize the data fields of a class
 
@@ -79,30 +90,19 @@ Instance constructor:
 public Car(string model) => modelName = model;
 ```
 
-### Create classes and objects in C#
-
-- Static fields are initialized before an instance of the class is created
-- **static fields are accessed using the class name, not an instance**
-- Readonly fields can be assigned a value only when they’re declared or in a constructor
-- A static constructor is called only once
-- Static constructors are used to initialize static fields
-- The `this` keyword is used to access fields, properties, and methods of the current instance
-- **The `this` keyword is not available in a static constructor.**
-
-**Optional parameters must appear after all required parameters**
-
 <span aria-hidden="true"><br></span>
 
 ## 2. Implement class properties and methods
 
 ### Examine class members
 
-- fields to define the data of an object,
-- properties to control access to fields, and
-- methods to define the behavior of an object
+- Fields: used to define the data of an object,
+- Properties to control access to fields, and
+- Methods to define the behavior of an object
 - Properties look like fields when used, act like methods behind the scenes
 - _Fields_: Fields are variables declared at class scope. A field may be a built-in numeric type **or an instance of another class**.
 - _Constants_: Constants are fields whose value is set at compile time and can't be changed.
+  - These were not covered in the lessons so I do not know their purpose
 - _Properties_: Properties are methods on a class that are accessed as if they were fields on that class.
 - _Methods_: Methods define the actions that a class can perform
 - _Events_: Events provide notifications about occurrences, such as button clicks. Events are defined and triggered by using _delegates_
@@ -114,21 +114,21 @@ public Pet AdoptedPet { get; set; }
 
 ### Get started with class properties and accessors
 
-- properties are implemented as special methods called accessors
+- properties are implemented as special methods called _accessors_
 - Properties combine aspects of both fields and methods
-- A property without a `set` accessor is considered read-only
-- A property without a `get` accessor is considered write-only
+- A property without a `set` accessor is considered _read-only_
+- A property without a `get` accessor is considered _write-only_
 - Properties are declared by
-  - specifying the access level of the field,
-  - followed by the type of the property,
-  - followed by the name of the property,
-  - followed by a code block that declares a get and/or a set accessor
+  - Specifying the access level of the field,
+  - Followed by the type of the property,
+  - Followed by the name of the property,
+  - Followed by a code block that declares a get and/or a set accessor
 - Properties can transparently expose data on a class where that data is retrieved from some other source, such as a database.
 - They can take an action when data is changed, such as raising an event, or changing the value of other fields.
 - They can validate data before allowing a change.
 - The fields that provide the values for property accessors are often called _backing fields_
-- The code block for a get accessor can also be used to return a calculated value
-- The `set` accessor uses an implicit parameter called `value`, whose type is the type of the property
+- The code block for a _`get` accessor_ can also be used to return a calculated value
+- The _`set` accessor_ uses an implicit parameter called `value`, whose type is the type of the property
 - Expression-bodied members: An expression body definition consists of the `=>` token followed by the expression
 
 ```cs
@@ -158,9 +158,9 @@ public string FirstName { get; set; } = "FirstName";
 
 ### Restrict access to properties
 
-- By default, get and set accessors have the same accessibility level as the property to which they belong
-- you can restrict the accessibility of either the get or set accessor
-- Typically, you restrict the accessibility of the set accessor, while keeping the get accessor publicly accessible
+- By default, `get` and `set` accessors have the same accessibility level as the property to which they belong
+- You can restrict the accessibility of either the `get` or `set` accessor
+- Typically, you restrict the accessibility of the `set` accessor, while keeping the `get` accessor publicly accessible
 
 ```cs
 // restrict the accessibility of the set accessor
@@ -177,6 +177,7 @@ public static int TotalPets { get; private set; }
   - Any method parameters
 - Methods can be either _instance_ or _static_
 - To pass a parameter by reference, you use the `ref` or `out` keyword (?)
+- Unlike fields, properties aren't classified as variables. Therefore, you can't pass a property as a `ref` or `out` parameter
 - By using the `params` keyword to indicate that a parameter is a parameter collection, you allow your method to be called with a variable number of arguments
 - Sometimes, you want your method to return more than a single value
 - You use tuple types and tuple literals to return multiple values
@@ -199,6 +200,8 @@ public abstract double GetTopSpeed();
 ```
 
 ### Implement extension methods for a class
+
+> I do understand why you would do this other than adding a method to a 3rd=party class.
 
 - Extension methods let you "add" a method to an existing type without modifying the type itself or implementing the new method in an inherited type
 - Extension methods are static methods, but they're called as if they were instance methods on the extended type
@@ -232,9 +235,9 @@ public static class BankCustomerExtensions
 - Class member access: `public`, `private`, `protected`, `protected internal`, `private protected`, or `file`
 - Private constructors are often used in classes that contain only static members
 - If you don't specify an access modifier for a constructor, it defaults to `private`
-- a static class can't be instantiated (and only contains static members)
-- you can access the members of a static class by referencing the class name
-- the main features of a static class::
+- A static class can't be instantiated (and only contains static members)
+- You can access the members of a static class by referencing the class name
+- The main features of a static class::
   - Contains only static members.
   - Can't be instantiated.
   - Is sealed.
@@ -269,7 +272,7 @@ partial class Moon {/* code */ }
 
 - Named arguments enable you to specify an argument for a parameter by matching the argument with its name rather than with its position in the parameter list
 - Optional arguments enable you to omit arguments for some parameters
-- When you use named and optional arguments, the arguments are evaluated in the order in which they appear in the argument list, not the parameter list
+- When you use named and optional arguments, the arguments are evaluated in the order in which they appear in the argument list, not the parameter list (?)
 - A nullable reference type (`T?`) allows arguments to be explicitly null but does not inherently make a parameter optional
 - Optional parameters are defined at the end of the parameter list, after any required parameters.
 - IntelliSense uses brackets to indicate optional parameters
