@@ -276,3 +276,50 @@ partial class Moon {/* code */ }
 - A nullable reference type (`T?`) allows arguments to be explicitly null but does not inherently make a parameter optional
 - Optional parameters are defined at the end of the parameter list, after any required parameters.
 - IntelliSense uses brackets to indicate optional parameters
+
+<span aria-hidden="true"><br></span>
+
+## Interfaces
+
+- in `.csproj` is `<ImplicitUsings>enable</ImplicitUsings>` which means you can almost always delete `using System;` from `Program.cs`
+- Student/Teacher are inside the LearnInterfaces logical "office."
+- `Program.cs` is out in the "Global Lobby."
+- For the Lobby to see into the Office, you must use the `using LearnInterfaces;` key.
+- The Blueprint Files (`.cs` for Interfaces/Classes): `*` Use File-Scoped Namespaces (`namespace Name;`).
+- The Entry Point (`Program.cs`): `*` Use Top-Level Statements (No namespace, no class, no Main) so `using NamespaceName`.
+
+Syntax:
+
+```cs
+// in LearnInterfaces folder, in IPerson.cs
+namespace LearnInterfaces;
+
+public interface IPerson
+{
+    // Name & Age properties, DisplayInfo method signature
+    string Name { get; set; }
+    int Age { get; set; }
+    void DisplayInfo();
+}
+
+// in Student.cs
+namespace LearnInterfaces;
+
+public class Student : IPerson
+{
+    public string Name { get; set; } = string.Empty;
+    public int Age { get; set; } = 0;
+
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Student Name: {Name}, Age: {Age}");
+    }
+}
+
+// in Program.cs
+using LearnInterfaces;
+
+IPerson student = new Student { Name = "Eric Solomon", Age = 20 };
+
+student.DisplayInfo();
+```

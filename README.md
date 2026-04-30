@@ -9,8 +9,8 @@ This project uses various Object-Oriented Programming concepts and syntax such a
 1. Clone this repository and switch into project folder
 
    ```sh
-   git clone https://github.com/Kernix13/csharp-oop-class-syntax
-   cd csharp-oop-class-syntax
+   git clone https://github.com/Kernix13/csharp-oop-class-syntax.git AnimalShelter
+   cd AnimalShelter
    ```
 
 2. Run the application
@@ -28,8 +28,8 @@ This project uses various Object-Oriented Programming concepts and syntax such a
 ### Quick Start
 
 ```sh
-git clone https://github.com/Kernix13/csharp-oop-class-syntax
-cd csharp-oop-class-syntax
+git clone https://github.com/Kernix13/csharp-oop-class-syntax.git AnimalShelter
+cd AnimalShelter
 dotnet run
 ```
 
