@@ -90,6 +90,7 @@ I did not, or decided not to, use the following due to the fact I did not unders
 1. `params` method keyword
 1. The `this` keyword in methods to access fields, properties, and methods of the current instance (_Add later_)
 1. Extension methods: `this ClassName paramName`
+1. `abstract` method modifier
 
 ### Skip learning for now
 
@@ -97,15 +98,14 @@ I did not, or decided not to, use the following due to the fact I did not unders
 1. `protected` access level
 1. `required` access level
 1. `internal` access level
-1. `abstract` method modifier
 1. The `ref` or `out` keywords
 1. The `field` keyword: You must set your `<LangVersion>` element to preview in your project file in order to use the `field` contextual keyword. What is `@field`?
-1. Static classes
-1. Nested classes
-1. Partial members
-1. Object initializers
-1. Copy constructors
-1. Class finalizers
+1. Static classes - unsure about this one
+1. Nested classes - don't do this one
+1. Partial members - don't do this one
+1. Object initializers?
+1. Copy constructors?
+1. Class finalizers?
 
 ### Other points
 
