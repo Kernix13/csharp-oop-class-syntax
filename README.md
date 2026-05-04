@@ -236,6 +236,10 @@ public string PetName
 
 #### CONSTRUCTOR
 
+- Constructors are declared using the same name as the class and **_doesn't include a return type_**
+  - The constructor's method signature can include an optional access modifier
+  - Once again: _A constructor's method signatures doesn't include a return type_
+- Classes can have more than one constructor. When a class has more than one constructor, the constructors usually take different arguments
 - static constructor: to initialize any static data, or to perform an action that needs to be performed only once
 - public instance constructor: this builds the instance objects
 
