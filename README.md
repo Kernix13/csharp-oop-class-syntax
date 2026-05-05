@@ -68,7 +68,7 @@ I used the following syntax/keywords in this project:
 1. public property with modern syntax: `{ get; set; }`
 1. public property with the longer/verbose syntax
 1. public property with validation
-1. Use of `=>` in property accessor
+1. Use of expression body definition `=>` in property accessor
 1. 1 Static constructor
 1. 1 Public instance constructor with parameters
 1. 2 optional parameters in instance constructor
@@ -236,12 +236,15 @@ public string PetName
 
 #### CONSTRUCTOR
 
+- public instance constructor: this builds the instance objects
 - Constructors are declared using the same name as the class and **_doesn't include a return type_**
   - The constructor's method signature can include an optional access modifier
   - Once again: _A constructor's method signatures doesn't include a return type_
 - Classes can have more than one constructor. When a class has more than one constructor, the constructors usually take different arguments
+- Classes often define constructors that take parameters.
+- Constructors that take parameters must be called using the `new` operator or a `base` statement
 - static constructor: to initialize any static data, or to perform an action that needs to be performed only once
-- public instance constructor: this builds the instance objects
+- A static constructor doesn't take access modifiers or have parameters
 
 ```cs
 // 1. static constructor

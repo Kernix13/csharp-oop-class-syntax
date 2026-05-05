@@ -236,6 +236,8 @@ public static class BankCustomerExtensions
 - Private constructors are often used in classes that contain only static members
 - If you don't specify an access modifier for a constructor, it defaults to `private`
 - A static class can't be instantiated (and only contains static members)
+- Static class methods can be called directly without creating an instance of a class
+- Static classes are useful for grouping related methods together and providing a convenient way to access them
 - You can access the members of a static class by referencing the class name
 - The main features of a static class::
   - Contains only static members.
