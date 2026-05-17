@@ -90,7 +90,7 @@ I did not, or decided not to, use the following due to the fact I did not unders
 1. `params` method keyword
 1. The `this` keyword in methods to access fields, properties, and methods of the current instance (_Add later_)
 1. Extension methods: `this ClassName paramName`
-1. `abstract` method modifier
+1. `abstract` modifier
 
 ### Skip learning for now
 
